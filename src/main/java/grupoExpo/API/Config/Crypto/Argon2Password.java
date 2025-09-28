@@ -1,0 +1,29 @@
+package grupoExpo.API.Config.Crypto;
+
+import de.mkammerer.argon2.Argon2;
+import de.mkammerer.argon2.Argon2Factory;
+import org.springframework.stereotype.Service;
+
+@Service
+public class Argon2Password {
+    //Configuracion para argom2id
+    private static final int ITERATIONS = 10;
+    private static final int MEMORY = 32768;
+    private static final int PARALLELISM = 2;
+
+    private Argon2 argon2 = Argon2Factory.create(Argon2Factory.Argon2Types.ARGON2id);
+
+    /**
+     * Aqui se recibe el parametro password y se encripta utilanzo los valores definidos en la clase
+     * @param password
+     * @return
+     */
+    public String EncryptPassword(String password){return argon2.hash(ITERATIONS,MEMORY,PARALLELISM, password);}
+    /**
+     * El metodo recibe ambas contrasenas y mediante el metodo verify de Argon2, evalua si la contrasena es correcta.
+     * @param //password password proveniente de la base de datos
+     * @param //password password sin encriptacion, es el valor que el usuario ingresa en el login
+     * @return
+     */
+    public boolean VerifyPassword(String hashDB, String contraseñaUsuario) {return argon2.verify(contraseñaUsuario, contraseñaUsuario);}
+}

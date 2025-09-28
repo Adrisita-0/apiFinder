@@ -1,4 +1,4 @@
-package grupoExpo.API.Models.DTO;
+package grupoExpo.API.Models.DTO.Usuario;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -22,13 +22,16 @@ public class UserDTO {
     @Email(message = "Debe ser un correo valido")
     private String correoUsuario;
     @Size(min = 8, message = "La contraseña debe contener 8 al menos caracteres")
-    private String contraseñaUsuario;
+    private String contrasenaUsuario;
     @NotNull
     private String segurityAnswerUsuario;
     private byte imagenUsuario;
     private String generoUsuario;
 
+    private String nombreRol;
 
 
-
+    public Long getTipoUsuario() {
+        return null;
+    }
 }

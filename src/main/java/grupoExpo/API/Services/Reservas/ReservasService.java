@@ -1,7 +1,7 @@
 package grupoExpo.API.Services.Reservas;
 
 
-import grupoExpo.API.Entities.User.ReservasEntity;
+import grupoExpo.API.Entities.Reservas.ReservasEntity;
 import grupoExpo.API.Models.DTO.ReservasDto;
 import grupoExpo.API.Repositories.Reservas.ReservasRepo;
 import org.springframework.beans.factory.annotation.Autowired;

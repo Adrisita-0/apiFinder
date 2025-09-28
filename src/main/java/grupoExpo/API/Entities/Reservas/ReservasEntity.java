@@ -1,4 +1,4 @@
-package grupoExpo.API.Entities.User;
+package grupoExpo.API.Entities.Reservas;
 
 
 import jakarta.persistence.*;
